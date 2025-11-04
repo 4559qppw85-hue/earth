@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에코브릿지 (EcoBridge)</title>
+  <style>
+    /* 기본 스타일 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      color: #333;
+      background-color: #f9fafb;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #2a7d5e;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2a7d5e;
+    }
+
+    /* 섹션 공통 */
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 80px 10%;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2a7d5e;
+    }
+
+    section p {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* 홈 섹션 */
+    #home {
+      background: linear-gradient(to bottom right, #c8f3dc, #e8f8ff);
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      color: #2a7d5e;
+      margin-bottom: 10px;
+    }
+
+    #home span {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* 소개 */
+    #about {
+      background-color: #ffffff;
+    }
+
+    /* 핵심 활동 */
+    #activity {
+      background-color: #f1f9f4;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    ul li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    /* 캠페인 참여 */
+    #campaign {
+      background-color: #e9f7fb;
+    }
+
+    button {
+      background-color: #2a7d5e;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #218c66;
+    }
+
+    /* 뉴스 / 스토리 */
+    #news {
+      background-color: #ffffff;
+    }
+
+    .story {
+      max-width: 700px;
+      background: #fff;
+      padding: 25px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .story h3 {
+      color: #2a7d5e;
+      margin-bottom: 10px;
+    }
+
+    /* 후원/문의 */
+    #contact {
+      background: linear-gradient(to bottom right, #d4f1f4, #ffffff);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #2a7d5e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    /* 스크롤 애니메이션 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>에코브릿지 🌱</h1>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#about">소개</a>
+      <a href="#activity">핵심활동</a>
+      <a href="#campaign">캠페인참여</a>
+      <a href="#news">뉴스/스토리</a>
+      <a href="#contact">후원/문의</a>
+    </nav>
+  </header>
+
+  <section id="home" class="fade-in">
+    <h1>청소년의 손으로 지구를 켜다 💡</h1>
+    <span>자연과 사람을 잇는 다리, 에코브릿지</span>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>에코브릿지 소개</h2>
+    <p>
+      에코브릿지는 청소년이 주도하는 환경 비영리 재단입니다.  
+      우리는 자연과 사람을 잇는 다리로서, 지역 사회의 환경 보호와 지속 가능한 미래를 위해 행동합니다.  
+      모든 활동은 ‘작은 실천이 지구를 바꾼다’는 믿음에서 출발합니다.
+    </p>
+  </section>
+
+  <section id="activity" class="fade-in">
+    <h2>핵심 활동</h2>
+    <p>학교와 지역 사회를 중심으로 환경 정화 캠페인을 펼칩니다.</p>
+    <ul>
+      <li>🏃‍♀️ 플로깅 캠페인 (조깅하며 쓰레기 줍기)</li>
+      <li>♻️ 재활용 및 분리수거 챌린지</li>
+      <li>🌳 지역 환경 개선 봉사활동</li>
+      <li>📱 SNS 인증 캠페인으로 인식 확산</li>
+    </ul>
+  </section>
+
+  <section id="campaign" class="fade-in">
+    <h2>캠페인 참여</h2>
+    <p>
+      당신의 참여가 지구를 밝힙니다.  
+      함께 플로깅, 쓰레기 줄이기, 재활용 챌린지에 참여하세요!
+    </p>
+    <button onclick="alert('캠페인 참여 신청이 완료되었습니다! 💚')">참여하기</button>
+  </section>
+
+  <section id="news" class="fade-in">
+    <h2>뉴스 / 스토리</h2>
+    <div class="story">
+      <h3>🌿 첫 플로깅 데이</h3>
+      <p>충렬여고 학생들이 함께한 첫 플로깅 캠페인!  
+      단 2시간 만에 20kg의 쓰레기를 수거하며 지역 사회의 변화를 이끌었습니다.</p>
+    </div>
+    <div class="story">
+      <h3>🌍 환경 인식 포스터 공모전</h3>
+      <p>청소년들이 직접 만든 포스터를 통해 기후위기의 심각성과 행동의 중요성을 알렸습니다.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>후원 / 문의</h2>
+    <p>에코브릿지와 함께 환경 보호의 다리를 놓아주세요.</p>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="이름" required />
+      <input type="email" id="email" placeholder="이메일" required />
+      <textarea id="message" rows="4" placeholder="문의 내용" required></textarea>
+      <button type="submit">보내기</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 에코브릿지 (EcoBridge) | 지적 소유권: 충렬여고 1학년 1반
+  </footer>
+
+  <script>
+    // 스크롤 시 페이드인 효과
+    const fadeElements = document.querySelectorAll(".fade-in");
+    const fadeInOnScroll = () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          el.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", fadeInOnScroll);
+    fadeInOnScroll();
+
+    // 문의 폼
+    function sendMessage(event) {
+      event.preventDefault();
+      alert("문의가 성공적으로 접수되었습니다. 감사합니다 💚");
+      document.querySelector("form").reset();
+    }
+  </script>
+
+</body>
+</html>
